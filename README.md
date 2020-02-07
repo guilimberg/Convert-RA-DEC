@@ -6,6 +6,6 @@ This Python3 code allows you to convert positions (RA/DEC) from hh:mm:ss (or hh 
 
 For this, you need Astropy, Numpy and Pandas packages installed.
 
-Important: your input data file must have RA and DEC as the first two columns. 
+Important: your input data file must have RA and DEC as the first two columns. I was too lazy to improve upon this. Feel free to do so. 
 
 The script is pretty straight foward, but since I couldn't find any online tool for doing this to big lists of objects, I decided to write one of my own and make it available to everyone. 
