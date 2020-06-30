@@ -11,18 +11,11 @@ from astropy.table import Table
 #Open the data file
 data = Table.read("RADEC.csv")
 
-# combine RA+DEC to facilitate the conversion
-ra_dec = [] 
-
-counter = -1
-for line in data:
-	counter = counter + 1
-	if counter != 0:
-		split_line = line.split(',')
-		ra_dec.append(split_line[0]+' '+split_line[1])
+ra = data["RA"]
+dec= data["DEC"]
 
 #Put the coordinates into a bin to get them easier in degrees
-coordinates = SkyCoord(ra_dec,unit=(u.hourangle,u.deg))
+coordinates = SkyCoord(ra=ra*u.hourangle, dec=dec*u.deg)
 
 #Convert the astropy.SkyCoord object to pandas DataFrame
 coord_df = pd.DataFrame({"ra":coordinates.ra.degree, "dec": coordinates.dec.degree})
