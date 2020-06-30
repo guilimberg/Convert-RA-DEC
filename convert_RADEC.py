@@ -5,12 +5,11 @@ from astropy import units as u
 from astropy.coordinates import SkyCoord
 import numpy as np
 import pandas as pd
+from astropy.table import Table
 
 #------------------------------------------------------------
 #Open the data file
-data = []
-with open("RADEC.csv",'r') as file:
-	data = file.readlines()
+data = Table.read("RADEC.csv")
 
 # combine RA+DEC to facilitate the conversion
 ra_dec = [] 
