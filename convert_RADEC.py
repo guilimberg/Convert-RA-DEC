@@ -10,6 +10,7 @@ from astropy.table import Table
 #------------------------------------------------------------
 #Open the data file
 data = Table.read("RADEC.csv")
+data = data.filled()
 
 ra = data["RA"]
 dec= data["DEC"]
