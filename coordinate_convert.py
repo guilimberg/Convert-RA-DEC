@@ -3,7 +3,7 @@ from astropy import units as u
 from astropy.coordinates import SkyCoord
 
 # load the data (in this case, comma separated tables, but can be done with ascii files eventually)
-data = pd.read_csv("SAGAdatabase_2023.csv")
+data = pd.read_csv("your_data.csv")
 
 
 # this next step simply combines the original RA and DEC columns
@@ -32,4 +32,4 @@ data["RAdeg"] = coords_ra_deg
 data["DECdeg"] = coords_dec_deg
 
 # and save everything (comma separated)
-data.to_csv("SAGAdatabase_2023_all.csv")
+data.to_csv("your_data.csv")
